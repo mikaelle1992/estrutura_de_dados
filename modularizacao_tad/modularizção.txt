@@ -1,0 +1,2 @@
+Modularização,
+Sistemas que são compostos por módulos com funções bem definidas ou também conhecida como sub-rotinas é uma forma de trabalhar o nosso código para que fique mais limpo, reduz a complexidade do problema, dividindo-o em sub-problemas mais simples,o codigo tem facilidade de manuntenção, boa legibilidade, reutilização de código.

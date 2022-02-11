@@ -15,5 +15,9 @@ int main(){
 
     int x = lista_vazia(Lista* li);
     if(lista_vazia(li));
+
+
+    int x = insere_lista_final(li, dados_aluno);
+
 }
 

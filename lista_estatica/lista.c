@@ -19,5 +19,9 @@ int main(){
 
     int x = insere_lista_final(li, dados_aluno);
 
+    int x = insere_lista_inicio(li, dados_aluno);
+
+    int x = insere_lista_ordenada(li, dados_aluno);
+
 }
 

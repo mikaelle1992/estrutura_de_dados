@@ -95,3 +95,27 @@ int insere_lista_inicio(Lista *li, struct aluno al)
     return 1;
 
 };
+
+
+int insere_lista_ordenada(Lista *li, struct aluno al)
+{
+        if(li == NULL)
+    {
+        return 0;
+    }
+    if(lista_cheia(li))
+    {
+        return 0;
+    }
+    int k, i =0;
+    while(i<li->qtd && li->dados[i].matricula < al.matricula){
+        i++;
+    }
+    for(k=li->qtd-1; k >= i k--){
+        li->dados[k+i] = li->dados[k];
+    li->dados[k] = al;
+    li->qtd++; 
+    return 1;
+
+    }
+};

@@ -16,6 +16,8 @@ Lista *cria_lista();
 
 void libera_lista(Lista *li);
 
+void imprime_lista(Lista *li);
+
 int tamanho_lista(Lista *li);
 
 int lista_cheia(Lista *li);
@@ -37,3 +39,7 @@ int remove_lista_final(Lista* li);
 int remove_lista_otimizado(Lista* li, int mat);
 
 void imprime_lista(Lista* li);
+
+int consulta_lista_pos(Lista* li, int pos, struct aluno *al);
+
+int consulta_lista_mat(Lista* li, int mat, struct aluno *al);

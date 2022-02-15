@@ -5,10 +5,10 @@
 
 
 int main(){
-    struct aluno a[4] = {{2,"Andre",9.5,7.8,8.5},
-                         {4,"Ricardo",7.5,8.7,6.8},
-                         {1,"Bianca",9.7,6.7,8.4},
-                         {3,"Ana",5.7,6.1,7.4}};
+    struct aluno a[4] = {{3,"Ana",5.5,9.5,7.0},
+                         {2,"João",6.2,9.2,8.8},
+                         {4,"Pedro",6.1,9.5,7.2},
+                         {1,"Bia",8.5,9.1,5.9}};
 
     Lista* li = cria_lista();
     int i;
@@ -16,17 +16,21 @@ int main(){
         insere_lista_ordenada(li,a[i]);
         
     int x = tamanho_lista(li);
+    print("tamanho da lista %d", x);
 
-    int x = lista_cheia(li);
+    int x1 = lista_cheia(li);
     if(lista_cheia(li));
 
-    int x = lista_vazia(Lista* li);
+    int x2 = lista_vazia(Lista* li);
     if(lista_vazia(li));
 
+    remove_lista_final(a[4]);
+    
+    int x2 = remove_lista(li, a[1]->matricula);
 
-    int x = insere_lista_final(li, dados_aluno);
+    // int x = insere_lista_final(li, dados_aluno);
 
-    int x = insere_lista_inicio(li, dados_aluno);
+    // int x = insere_lista_inicio(li, dados_aluno);
 
 
 

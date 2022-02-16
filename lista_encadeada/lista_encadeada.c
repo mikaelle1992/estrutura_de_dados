@@ -1,30 +1,34 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include "lista_encadeada.h"
 
-struct ponto{
-    float x;
-    float y;
-    struct ponto *prox;
+struct elemento{
+    struct aluno dados;
+    struct elemento *prox;
+}
+
+typedef struct elemento Elem;
+
+Lista* cria_lista()
+{
+    Lista* li = (Lista*) malloc(sizeof(Lista));
+    if(li != NULL)
+    {
+        *li = NULL;
+    }
+    return li;
 };
 
-typedef struct ponto Ponto;
-
-Ponto *listaPontos;
-
-void add(float x, float y){
-    Ponto *p = (Ponto*)malloc(sizeof(Ponto));
-    p->x= x;
-    p->y= y; 
-    p->prox = listaPontos;
-    listaPontos = p;
-}
-
-int main(){
-    add(4,9);
-    add(6,7);
-
-    printf("Ponto = (%.0f)",listaPontos->prox->x);
-    printf("Ponto = (%.0f)",listaPontos->x);
-    
-    return 0;
-}
+void libera_lista(Lista *li)
+{
+    if(li != NULL)
+    {
+        Elem* no;
+        //*li inicio da lista
+        while((*li) != NULL){
+            no = *li;
+            *li = (*li)-> prox;
+            free(no);
+        }
+        free(li);
+    }
+};

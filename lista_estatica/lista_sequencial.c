@@ -110,13 +110,14 @@ int insere_lista_ordenada(Lista *li, struct aluno al)
     {
         i++;
     }
-    for (k = li->qtd - 1; k >= i; k--)
+    for (k = li->qtd -1; k >= i; k--)
     {
         li->dados[k + i] = li->dados[k];
-        li->dados[k] = al;
-        li->qtd++;
-        return 1;
     }
+    li->dados[i] = al;
+    li->qtd++;
+    return 1;
+    
 };
 
 int remove_lista_final(Lista *li)
@@ -209,7 +210,7 @@ void imprime_lista(Lista* li){
     for(i=0; i< li->qtd; i++){
         printf("Matricula: %d\n",li->dados[i].matricula);
         printf("Nome: %s\n",li->dados[i].nome);
-        printf("Notas: %0.2f %0.2f %0.2f\n",li->dados[i].n1,
+        printf("Notas: %f %f %f\n",li->dados[i].n1,
                                    li->dados[i].n2,
                                    li->dados[i].n3);
         printf("-------------------------------\n");

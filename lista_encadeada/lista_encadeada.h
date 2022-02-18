@@ -10,8 +10,17 @@ struct aluno
     
 };
 
-typedef struct alemento* Lista;
+typedef struct elemento* Lista;
 
 Lista* cria_lista();
 
 void libera_lista(Lista *li);
+
+int tamanho_lista(Lista *li);
+
+int lista_cheia(Lista *li);
+
+int lista_vazia(Lista *li);
+
+
+

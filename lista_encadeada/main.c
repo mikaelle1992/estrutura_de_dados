@@ -6,8 +6,8 @@
 int main(){
 
     struct aluno al, a[4] = {{1,"Ana",5.5,9.5,7.0},
-                         {3,"João",6.2,9.2,8.8},
-                         {4,"Pedro",6.1,9.5,7.2},
+                         {4,"João",6.2,9.2,8.8},
+                         {3,"Pedro",6.1,9.5,7.2},
                          {5,"Bia",8.5,9.1,5.9}};
 
     struct aluno  b = {2,"bianca",8.4,8.5,6.0};
@@ -35,7 +35,11 @@ int main(){
 
     imprime_lista(li);
     printf("\n\n\n\n");
-    
+
+    remove_lista_inicio(li);
+    remove_lista(li, 5);
+    imprime_lista(li);
+
     libera_lista(li);
     system("pause");
     return 0;

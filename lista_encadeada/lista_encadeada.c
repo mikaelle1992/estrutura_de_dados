@@ -135,6 +135,66 @@ int insere_lista_ordenada(Lista *li, struct aluno al){
     }
 }
 
+int remove_lista_inicio(Lista *li){
+    if(li == NULL) 
+    {
+        return 0;
+    }
+    if((*li) == NULL){
+        return 0;
+    }
+    Elem *no = *li;
+    *li = no->prox;
+    free(no);
+    return 1;
+}
+
+int remove_lista_final(Lista *li){
+      if(li == NULL) 
+    {
+        return 0;
+    }
+    if((*li) == NULL){
+        return 0;
+    }
+    Elem *ant, *no = *li;
+    while(no->prox != NULL){
+        ant = no;
+        no = no->prox;
+    }
+    if(no == (*li)){
+        *li = no->prox;
+    }
+    else{
+        ant->prox = no->prox;
+    }
+    free(no);
+    return 1;
+}
+
+int remove_lista(Lista *li, int mat){
+    if(li == NULL) 
+    {
+        return 0;
+    }
+    Elem *ant, *no = *li;
+    while(no->prox != NULL && no->dados.matricula != mat){
+        ant = no;
+        no = no->prox;
+    }
+    if(no == NULL){
+        return 0;
+    }
+    if (no == *li){
+        *li == no->prox;
+    }
+    else{
+        ant->prox = no->prox;
+    }
+    free(no);
+    return 1;
+}
+
 void imprime_lista(Lista* li){
     if(li == NULL)
         return;

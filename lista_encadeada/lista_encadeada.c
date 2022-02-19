@@ -101,3 +101,52 @@ int insere_lista_final(Lista *li, struct aluno al){
     return 1;
 
 }
+
+int insere_lista_ordenada(Lista *li, struct aluno al){
+    if(li == NULL) 
+    {
+        return 0;
+    }
+    Elem* no = (Elem*) malloc(sizeof(Elem));
+    if(no == NULL){
+        return 0;
+    }
+    no->dados = al;
+    if(lista_vazia(li)){
+        no->prox = (*li);
+        *li = no;
+        return 1;
+    }
+    else
+    {
+        Elem *ant, *atual = *li;
+        while(atual != NULL && atual-> dados.matricula < al.matricula){
+            ant = atual;
+            atual = atual->prox;
+        }
+        if (atual == *li){
+            *li = no;
+        }
+        else{
+            no->prox = ant->prox;
+            ant->prox = no;
+        }
+        return 1;
+    }
+}
+
+void imprime_lista(Lista* li){
+    if(li == NULL)
+        return;
+    Elem* no = *li;
+    while(no != NULL){
+        printf("Matricula: %d\n",no->dados.matricula);
+        printf("Nome: %s\n",no->dados.nome);
+        printf("Notas: %f %f %f\n",no->dados.n1,
+                                   no->dados.n2,
+                                   no->dados.n3);
+        printf("-------------------------------\n");
+
+        no = no->prox;
+    }
+}

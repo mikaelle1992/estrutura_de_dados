@@ -5,7 +5,7 @@
 
 int main(){
 
-    struct aluno al, a[4] = {{2,"Ana",5.5,9.5,7.0},
+    struct aluno al, a[4] = {{1,"Ana",5.5,9.5,7.0},
                          {3,"João",6.2,9.2,8.8},
                          {4,"Pedro",6.1,9.5,7.2},
                          {5,"Bia",8.5,9.1,5.9}};
@@ -14,6 +14,10 @@ int main(){
     struct aluno  c = {7,"Ricardo",5.5,5.5,1.0};
 
     Lista* li = cria_lista();
+    int i;
+
+    for(i=0; i < 4; i++)
+        insere_lista_ordenada(li,a[i]);
 
     insere_lista_inicio(li, b);
 
@@ -29,6 +33,8 @@ int main(){
     int x1 =lista_vazia(li);
     printf("lista vazia: %d\n", x1);
 
+    imprime_lista(li);
+    printf("\n\n\n\n");
     
     libera_lista(li);
     system("pause");

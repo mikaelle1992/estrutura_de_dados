@@ -60,3 +60,44 @@ int lista_vazia(Lista *li){
     }
     return 0;
 }
+
+int insere_lista_inicio(Lista *li, struct aluno al)
+{
+    if(li == NULL){
+        return 0;
+    }
+    Elem* no = (Elem*) malloc(sizeof(Elem));
+    if(no == NULL){
+        return 0;
+    }
+    no->dados = al;
+    no->prox = (*li);
+    *li = no;
+    return 1;
+}
+
+int insere_lista_final(Lista *li, struct aluno al){
+    if(li == NULL) 
+    {
+        return 0;
+    }
+    Elem* no = (Elem*) malloc(sizeof(Elem));
+    if(no == NULL){
+        return 0;
+    }
+    no->dados = al;
+    no->prox =NULL;
+    if((*li) == NULL){
+        *li = no;
+
+    }
+    else{
+        Elem *aux = *li;
+        while(aux->prox != NULL){
+            aux = aux->prox;
+        }
+        aux ->prox = no;
+    }
+    return 1;
+
+}

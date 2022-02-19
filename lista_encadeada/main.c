@@ -10,7 +10,14 @@ int main(){
                          {4,"Pedro",6.1,9.5,7.2},
                          {5,"Bia",8.5,9.1,5.9}};
 
+    struct aluno  b = {2,"bianca",8.4,8.5,6.0};
+    struct aluno  c = {7,"Ricardo",5.5,5.5,1.0};
+
     Lista* li = cria_lista();
+
+    insere_lista_inicio(li, b);
+
+    insere_lista_final(li, c);
 
     int x = tamanho_lista(li);
     printf("tamanho: %d\n", x);

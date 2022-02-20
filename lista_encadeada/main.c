@@ -33,6 +33,25 @@ int main(){
     int x1 =lista_vazia(li);
     printf("lista vazia: %d\n", x1);
 
+    int pos = 7;
+    int x2 =consulta_lista_pos(li, pos, a);
+    if (x2){
+        printf("Posição %d encontrada na lista.\n\n ",pos);
+    }
+    else{
+        printf("Posição %d não foi encontrada na lista.\n\n",pos);
+    }
+
+
+    int mat = 7;
+    int x3 =consulta_lista_mat(li, mat, a);
+    if (x3){
+        printf("Matricula %d encontrada na lista.\n\n ",mat);
+    }
+    else{
+        printf("Matricula %d não foi encontrada na lista.\n\n ",mat);
+    }
+
     imprime_lista(li);
     printf("\n\n\n\n");
 

@@ -1,0 +1,3 @@
+"Lista Dinâmina duplamente encadeada":
+Tipo de lista onde cada elemento aponta para o seu sucessor e antecessor na lista.
+Usa um ponteiro especial para o primeiro elemento da lista e uma indicação de final de lista, no dois sentidos.

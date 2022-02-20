@@ -1,0 +1,2 @@
+"Lista sequencial entática" ou "Lista linear estática":
+Tipo de lista onde sucessor de um elemento ocupa o sucessor de um elemento ocupa a posição física seguinte do mesmo(usa de array)

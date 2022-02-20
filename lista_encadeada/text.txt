@@ -1,0 +1,2 @@
+"Lista Dinâmica encadeada":
+Tipo de lista onda cada elemento aponta para o seu sucessor na lista usa um ponteiro especial para o primeiro elemento da lista e uma indicação de final de lista.

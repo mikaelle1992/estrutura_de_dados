@@ -14,6 +14,15 @@ int main(){
     struct aluno  c = {7,"Thiago",6.5,7.5,8.0};
 
     Lista* li = cria_lista();
+    int i;
+
+    for(i=0; i < 4; i++)
+        insere_lista_ordenada(li,a[i]);
+
+    insere_lista_inicio(li, b);
+
+    insere_lista_final(li, c);
+
 
     int x = tamanho_lista(li);
     printf("Tamanho da lista: %d\n", x);
@@ -30,6 +39,8 @@ int main(){
     }
 
 
+    imprime_lista(li);
+    
     libera_lista(li);
     system("pause");
     return 0;

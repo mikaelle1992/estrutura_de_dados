@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "lista_din_ancad_dupla.c"
+#include "lista_din_encad_dupla.c"
 
 int main(){
 
@@ -14,6 +14,20 @@ int main(){
     struct aluno  c = {7,"Thiago",6.5,7.5,8.0};
 
     Lista* li = cria_lista();
+
+    int x = tamanho_lista(li);
+    printf("Tamanho da lista: %d\n", x);
+
+    int x0 =lista_cheia(li);
+    printf("Lista cheia: %d\n", x0);
+
+    int x1 =lista_vazia(li);
+    if (lista_vazia(li)){
+        printf("Lista vazia: %d\n", x1);
+    }
+    else{
+        printf("Lista não está vazia: %d\n", x1);
+    }
 
 
     libera_lista(li);

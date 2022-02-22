@@ -1,0 +1,19 @@
+"Lista Dinâmica circular":
+Tipo de Lista onde cada elemento apnta para o seu sucessor e o último elemento aponta para o primeiro da lista.
+Usar um ponteiro especial para o primeiro elemento da lista.
+Não existe uma indicação de final de lista.
+Cada elemento é tratado como um ponteiro que é alocado dinamicamente, a medida que os dados são inseridos.
+Para guardar o primeiro elemento, utilizamos um "ponteiro para ponteiro".
+Um ponteiro para ponteiro pode guardar o endereçõ de um "ponteiro".
+Assim, fica fácil mudar quem está no inicio da lista  mudando o conteudo do ponteiro para ponteiro.
+
+Vantagens:
+Melhor utilização dos recursos de memória.
+Não precisa movimentar os elementos nas operaçoes de inserção e remoção.
+Possibilidade de percorrer a lista diversas vezes.
+Não precisamos considerar casos especiais de inclusão e remoção de elementos(primeiro e ultimo).
+
+Desvantagens:
+Acesso indireto aos elementos.
+Necessidade de percorrer a lista para acessar um elemento.
+Lista não possui final definido.

@@ -38,9 +38,37 @@ int main(){
         printf("Lista não está vazia: %d\n", x1);
     }
 
-
     imprime_lista(li);
-    
+    printf("\n\n");
+
+    int pos = 4;
+    int x2 =consulta_lista_pos(li, pos, a);
+    if (x2){
+        printf("Posição %d encontrada na lista.\n\n ",pos);
+    }
+    else{
+        printf("Posição %d não foi encontrada na lista.\n\n",pos);
+    }
+
+
+    int mat = 7;
+    int x3 =consulta_lista_mat(li, mat, a);
+    if (x3){
+        printf("Matricula %d encontrada na lista.\n\n ",mat);
+    }
+    else{
+        printf("Matricula %d não foi encontrada na lista.\n\n ",mat);
+    }
+
+    remove_lista_inicio(li);
+
+    remove_lista_final(li);
+
+    remove_lista(li, 3);
+   
+    imprime_lista(li);
+    printf("\n\n");
+
     libera_lista(li);
     system("pause");
     return 0;

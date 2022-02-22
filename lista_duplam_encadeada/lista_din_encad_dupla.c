@@ -153,7 +153,106 @@ int insere_lista_ordenada(Lista *li, struct aluno al){
     }
 }
 
+int remove_lista_inicio(Lista *li){
+    if(li == NULL) 
+    {
+        return 0;
+    }
+    if((*li) == NULL){
+        return 0;
+    }
+    Elem* no = *li;
+    *li = no->prox;
+    if(no->prox != NULL){
+        no->prox->ant = NULL;
+    }
+    free(no);
+    return 1;
+};
 
+int remove_lista_final(Lista *li){
+    if(li == NULL) 
+    {
+        return 0;
+    }
+    if((*li) == NULL){
+        return 0;
+    }
+    Elem* no = *li;
+    while(no->prox != NULL){
+        no = no->prox;
+    }
+    if(no->ant == NULL){
+        no = no->prox;
+    }
+    else{
+        no->ant->prox = NULL;
+    }
+    free(no);
+    return 1;
+};
+
+
+int remove_lista(Lista *li, int mat){
+    if(li == NULL) 
+    {
+        return 0;
+    }
+    Elem* no = *li;
+    while(no != NULL && no->dados.matricula != mat){
+        no = no->prox;
+    }
+    if(no == NULL){
+        return 0;
+    }
+    if(no->ant == NULL){
+        *li = no->prox;
+    }
+    else{
+        no->ant->prox = no->prox;
+    }
+    if(no->prox != NULL){
+        no->prox->ant = no->ant;
+    }
+    free(no);
+    return 1;
+};
+
+int consulta_lista_pos(Lista *li, int pos, struct aluno *al){
+    if (li == NULL || pos <= 0) {
+        return 0;
+    }
+    Elem *no =  *li;
+    int i = 1;
+    while( no!= NULL && i < pos){
+        no = no->prox;
+        i++;
+    }
+    if(no == NULL){
+        return 0;
+    }
+    else{
+        *al = no-> dados;
+        return 1;
+    }
+};
+
+int consulta_lista_mat(Lista *li, int mat, struct aluno *al){
+    if (li == NULL) {
+        return 0;
+    }
+    Elem *no =  *li;
+    while(no!= NULL && no->dados.matricula != mat){
+        no = no->prox;
+    }
+    if(no==NULL){
+        return 0;
+    }
+    else{
+        *al = no-> dados;
+        return 1;
+    }
+};
 
 void imprime_lista(Lista* li){
     if(li == NULL)

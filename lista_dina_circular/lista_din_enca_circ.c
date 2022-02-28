@@ -162,6 +162,33 @@ int insere_lista_ordenada(Lista* li, struct aluno al)
         }
 }
 
+int remove_lista_inicio(Lista* li){
+    if(li == NULL) 
+    {
+        return 0;
+    }
+    if((*li) == NULL){
+        return 0;
+    }
+    if((*li) ==(*li)->prox) {
+        free(*li);
+        *li = NULL;
+        return 1;
+    }
+    Elem *atual = *li;
+    while(atual->prox != (*li)){
+        atual = atual->prox;
+    }
+    Elem *no = *li;
+    atual-> prox = no->prox;
+    *li = no->prox;
+    free(no);
+    return 1;
+};
+
+
+
+
 
 void imprime_lista(Lista* li){
     if(li == NULL || (*li) == NULL)

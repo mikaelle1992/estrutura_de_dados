@@ -44,6 +44,27 @@ int main()
     printf("------------Lista após remoções:------------\n");
 
     imprime_lista(li);
+
+    int pos = 2;
+    int x2 =consulta_lista_pos(li, pos, a);
+   
+    if (x2){
+        printf("Posição %d encontrada na lista.\n\n ",pos);
+    }
+    else{
+        printf("Posição %d não foi encontrada na lista.\n\n",pos);
+    }
+   
+
+    int mat = 3;
+    int x3 =consulta_lista_mat(li, mat, a);
+    if (x3){
+        printf("Matricula %d encontrada na lista.\n\n ",mat);
+    }
+    else{
+        printf("Matricula %d não foi encontrada na lista.\n\n ",mat);
+    }
+
     libera_lista(li);
     system("pause");
     return 0;

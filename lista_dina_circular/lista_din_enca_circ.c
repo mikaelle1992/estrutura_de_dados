@@ -187,7 +187,70 @@ int remove_lista_inicio(Lista* li){
 };
 
 
+int remove_lista_final(Lista* li){
+    if(li == NULL) 
+    {
+        return 0;
+    }
+    if((*li) == NULL){
+        return 0;
+    }
+    if((*li) ==(*li)->prox) {
+        free(*li);
+        *li = NULL;
+        return 1;
+    }
+    Elem *ant, *no = *li;
+    while(no->prox != (*li)){
+        ant = no;
+        no = no->prox;
+    } 
+    ant-> prox = no->prox;
+    free(no);
+    return 1;
+};
 
+int remove_lista(Lista* li, int mat){
+    if(li == NULL) 
+    {
+        return 0;
+    }
+    if((*li) == NULL) 
+    {
+        return 0;
+    }
+
+    Elem *no = *li;
+
+    if(no->dados.matricula == mat){
+        if(no == no->prox){//lista fica vaza
+            free(no);
+            *li = NULL;
+            return 1;
+        }else{
+            Elem *ult = *li;
+            while(ult->prox != (*li))//procura o último
+                ult = ult->prox;
+            ult->prox = (*li)->prox;
+            *li = (*li)->prox;
+            free(no);
+            return 1;
+        }
+    }
+
+    Elem *ant = no;
+    no = no->prox;
+    while(no != (*li) && no->dados.matricula != mat){
+        ant = no;
+        no = no->prox;
+    }
+    if(no == *li){
+        return 0;
+    }
+    ant->prox = no->prox;
+    free(no);
+    return 1;
+};
 
 
 void imprime_lista(Lista* li){

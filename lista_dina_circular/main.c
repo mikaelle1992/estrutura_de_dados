@@ -32,7 +32,16 @@ int main()
     int x1 = lista_vazia(li);
    
     printf("Lista vazia: %d\n", x1);
-    
+    imprime_lista(li);
+
+    remove_lista_inicio(li);
+
+    remove_lista_final(li);
+
+    remove_lista(li, 3);
+
+
+    printf("------------Lista após remoções:------------\n");
 
     imprime_lista(li);
     libera_lista(li);

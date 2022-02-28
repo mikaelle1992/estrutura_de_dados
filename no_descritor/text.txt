@@ -1,0 +1,9 @@
+"Lista Encadeada com Nó descritor":
+Trata-se de uma variação da "Lista Dinâmica"
+Pode ser usada em listas simples, duplamente encadeada ou circular.
+Usa um "nó especial" chamado de "descritor" para armazenar diversas informações sobre a lista.
+O "o descritor" substitui o ponteiro para ponteiro que indica o inicio da lista .
+Ele permita armazenar informações como:
+-ponteiro para o inicio da lista;
+-ponteiro para o final da lista;
+-tamanho da lista;

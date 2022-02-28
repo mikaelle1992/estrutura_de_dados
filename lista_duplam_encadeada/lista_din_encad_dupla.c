@@ -19,7 +19,7 @@ Lista* cria_lista()
     return li;
 };
 
-void libera_lista(Lista *li)
+void libera_lista(Lista* li)
 {
     if(li != NULL)
     {
@@ -34,7 +34,7 @@ void libera_lista(Lista *li)
     }
 }
 
-int tamanho_lista(Lista *li){
+int tamanho_lista(Lista* li){
     if (li == NULL){
        return 0; 
     } 
@@ -48,12 +48,12 @@ int tamanho_lista(Lista *li){
     return cont;
 }
 
-int lista_cheia(Lista *li){
+int lista_cheia(Lista* li){
     return 0;
     // A lista não tem uma tamanho determinado. Por isso estou assumindo que a lista nunca esta cheia e retorna sempre Zero"
 }
 
-int lista_vazia(Lista *li){
+int lista_vazia(Lista* li){
     if(li == NULL)
     {
         return 1;
@@ -65,7 +65,7 @@ int lista_vazia(Lista *li){
     return 0;
 }
 
-int insere_lista_inicio(Lista *li, struct aluno al)
+int insere_lista_inicio(Lista* li, struct aluno al)
 {
     if(li == NULL){
         return 0;
@@ -84,7 +84,7 @@ int insere_lista_inicio(Lista *li, struct aluno al)
     return 1;
 }
 
-int insere_lista_final(Lista *li, struct aluno al){
+int insere_lista_final(Lista* li, struct aluno al){
     if(li == NULL) 
     {
         return 0;
@@ -112,7 +112,7 @@ int insere_lista_final(Lista *li, struct aluno al){
 
 }
 
-int insere_lista_ordenada(Lista *li, struct aluno al){
+int insere_lista_ordenada(Lista* li, struct aluno al){
     if(li == NULL) 
     {
         return 0;
@@ -153,7 +153,7 @@ int insere_lista_ordenada(Lista *li, struct aluno al){
     }
 }
 
-int remove_lista_inicio(Lista *li){
+int remove_lista_inicio(Lista* li){
     if(li == NULL) 
     {
         return 0;
@@ -170,7 +170,7 @@ int remove_lista_inicio(Lista *li){
     return 1;
 };
 
-int remove_lista_final(Lista *li){
+int remove_lista_final(Lista* li){
     if(li == NULL) 
     {
         return 0;
@@ -193,7 +193,7 @@ int remove_lista_final(Lista *li){
 };
 
 
-int remove_lista(Lista *li, int mat){
+int remove_lista(Lista* li, int mat){
     if(li == NULL) 
     {
         return 0;
@@ -218,7 +218,7 @@ int remove_lista(Lista *li, int mat){
     return 1;
 };
 
-int consulta_lista_pos(Lista *li, int pos, struct aluno *al){
+int consulta_lista_pos(Lista* li, int pos, struct aluno *al){
     if (li == NULL || pos <= 0) {
         return 0;
     }
@@ -237,7 +237,7 @@ int consulta_lista_pos(Lista *li, int pos, struct aluno *al){
     }
 };
 
-int consulta_lista_mat(Lista *li, int mat, struct aluno *al){
+int consulta_lista_mat(Lista* li, int mat, struct aluno *al){
     if (li == NULL) {
         return 0;
     }
@@ -254,7 +254,7 @@ int consulta_lista_mat(Lista *li, int mat, struct aluno *al){
     }
 };
 
-void imprime_lista(Lista* li){
+void imprime_lista(Lista*  li){
     if(li == NULL)
         return;
     Elem* no = *li;

@@ -16,8 +16,11 @@ int main(){
         insere_lista_final(li,a[i]);
 
     printf("Tamanho: %d\n",tamanho_lista(li));
+    
+    remove_lista_inicio(li);
+    remove_lista_final(li);
 
-
+    imprime_lista(li);
     libera_lista(li);
     system("pause");
     return 0;

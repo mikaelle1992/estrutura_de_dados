@@ -16,9 +16,9 @@ struct descritor
     int qtd;
 };
 
-Lista *cria_lista()
+Lista* cria_lista()
 {
-    Lista *li = (Lista *)malloc(sizeof(Lista));
+    Lista *li = (Lista*)malloc(sizeof(Lista));
     if (li != NULL)
     {
         li->inicio = NULL;
@@ -28,7 +28,7 @@ Lista *cria_lista()
     return li;
 };
 
-void libera_lista(Lista *li)
+void libera_lista(Lista* li)
 {
     if (li != NULL)
     {
@@ -43,7 +43,7 @@ void libera_lista(Lista *li)
     }
 };
 
-int tamanho_lista(Lista *li)
+int tamanho_lista(Lista* li)
 {
     if (li == NULL)
     {
@@ -52,7 +52,7 @@ int tamanho_lista(Lista *li)
     return li->qtd;
 };
 
-int insere_lista_inicio(Lista *li, struct aluno al)
+int insere_lista_inicio(Lista* li, struct aluno al)
 {
     if (li == NULL)
     {
@@ -74,7 +74,7 @@ int insere_lista_inicio(Lista *li, struct aluno al)
     return 1;
 }
 
-int insere_lista_final(Lista *li, struct aluno al)
+int insere_lista_final(Lista* li, struct aluno al)
 {
     if (li == NULL)
     {
@@ -99,3 +99,62 @@ int insere_lista_final(Lista *li, struct aluno al)
     li->qtd++;
     return 1;
 };
+
+int remove_lista_inicio(Lista* li){
+    if(li == NULL){
+        return 0;
+    }
+    if(li->inicio == NULL){
+        return 0;
+    }
+    Elem *no = li->inicio;
+    li->inicio = no->prox;
+    free(no);
+    if(li->inicio == NULL){
+        li->final = NULL;
+    }
+    li->qtd--;
+    return 1;
+}
+
+int remove_lista_final(Lista* li){
+    if (li == NULL){
+        return 0;
+    }
+    if(li->inicio == NULL){
+        return 0;
+    }
+    Elem *ant, *no = li->inicio;
+
+    while(no->prox != NULL){
+        ant = no;
+        no = no->prox;
+    }
+    if(no == li->inicio){
+        li->inicio == NULL;
+        li->final = NULL;
+    }
+    else{
+        ant->prox = no->prox;
+        li->final = ant;
+    }
+    free(no);
+    li->qtd--;
+    return 1;
+};
+
+
+void imprime_lista(Lista* li){
+    if(li == NULL || li->inicio == NULL)
+        return;
+    Elem* no = li->inicio;
+    while(no != NULL){
+        printf("Matricula: %d\n",no->dados.matricula);
+        printf("Nome: %s\n",no->dados.nome);
+        printf("Notas: %f %f %f\n",no->dados.n1,
+                                   no->dados.n2,
+                                   no->dados.n3);
+        printf("-------------------------------\n");
+        no = no->prox;
+    }
+}

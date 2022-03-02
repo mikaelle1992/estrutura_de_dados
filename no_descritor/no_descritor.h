@@ -25,4 +25,8 @@ int remove_lista_inicio(Lista* li);
 
 int remove_lista_final(Lista* li);
 
+int consulta_lista_mat(Lista* li, int mat, struct aluno *al);
+
+int consulta_lista_pos(Lista* li, int pos, struct aluno *al);
+
 void imprime_lista(Lista* li);

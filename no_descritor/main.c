@@ -16,7 +16,19 @@ int main(){
         insere_lista_final(li,a[i]);
 
     printf("Tamanho: %d\n",tamanho_lista(li));
-    
+
+    int posicao = 4;
+    if (consulta_lista_pos(li, posicao, &a1))
+            printf("ok na posição: %s\n",a1.nome);
+    else
+            printf("erro na posição: %d\n" ,posicao); 
+
+    int matricula = 3;
+    if (consulta_lista_mat(li, matricula, &a1))
+            printf("ok matricula: %d\n",a1.matricula);
+    else
+            printf("erro na posição: %d\n" ,matricula);
+    printf("==========================================\n");
     remove_lista_inicio(li);
     remove_lista_final(li);
 

@@ -143,6 +143,36 @@ int remove_lista_final(Lista* li){
     return 1;
 };
 
+int consulta_lista_pos(Lista* li, int pos, struct aluno *al){
+    if(li == NULL || li->inicio == NULL || pos <= 0)
+        return 0;
+    Elem *no = li->inicio;//primeiro elemento
+    int i = 1;
+    while(no != NULL && i < pos){
+        no = no->prox;
+        i++;
+    }
+    if(no == NULL)
+        return 0;
+    else{
+        *al = no->dados;
+        return 1;
+    }
+}
+
+int consulta_lista_mat(Lista* li, int mat, struct aluno *al){
+    if(li == NULL || li->inicio == NULL)
+        return 0;
+    Elem *no = li->inicio;
+    while(no != NULL && no->dados.matricula != mat)
+        no = no->prox;
+    if(no->dados.matricula != mat)
+        return 0;
+    else{
+        *al = no->dados;
+        return 1;
+    }
+}
 
 void imprime_lista(Lista* li){
     if(li == NULL || li->inicio == NULL)

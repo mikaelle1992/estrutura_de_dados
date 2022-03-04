@@ -1,0 +1,17 @@
+Uma "Fila" é um tipo especial de "lista":
+-inserções e exclusões de elementos ocorrem nas extremidades da "lista".
+Aplicações: qualquer aplicação onde.
+- Controle de fluxo de elementos.
+- Recursos compartilhados (impressora, transações de banco de dados, etc).
+- etc.
+
+Alocação estática:
+- O espaço de memória é alocada no momento da compilação. 
+- Exige a definição do número máximo de elementos da "Fila".
+- Acesso sequencial: elementos consecutivos na memória.
+
+Alocação dinâminca:
+- O espaço de memória é alocado em tempo de execução.
+- A "Fila cresce á medida que novos elementos são armazenados, e diminui á medida que elementos são removidos.
+- Acesso encadeado: cada elemento pode estar em uma área distinta da memória . Para acessar um elemento,
+é preciso percorrer todos os seus antecessores na "Fila".

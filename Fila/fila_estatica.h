@@ -21,3 +21,11 @@ int tamanho_fila(Fila* fi);
 int fila_cheia(Fila* fi);
 
 int fila_vazia(Fila* fi);
+
+int insere_fila(Fila* fi, struct aluno al);
+
+int remove_fila(Fila* fi);
+
+int consulta_fila(Fila* fi, struct aluno *al);
+
+void imprime_fila(Fila* fi);

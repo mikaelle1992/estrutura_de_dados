@@ -1,0 +1,3 @@
+"Fila Dinâmica"
+Tipo de fila onde cada elemento aponta para o seu sucessor na fila usa um "nó descritor"
+para representar o inicio e final da fila e uma indicação de final de fila.

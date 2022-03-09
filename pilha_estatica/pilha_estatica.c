@@ -7,9 +7,9 @@ struct pilha
     struct aluno dados[MAX];
 };
 
-Pilha *cria_pilha()
+Pilha* cria_pilha()
 {
-    Pilha *pi = (Pilha*) malloc(sizeof(struct(pilha));
+    Pilha *pi = (Pilha*) malloc(sizeof(struct pilha));
     if(pi !=NULL){
         pi->qtd = 0;
     }
@@ -63,7 +63,7 @@ int insere_pilha(Pilha *pi, struct aluno al)
     {
         return 0;
     }
-    if (pilha_cheia(pi) == NULL)
+    if(pi->qtd == MAX)
     {
         return 0;
     }
@@ -91,3 +91,17 @@ int consulta_pilha(Pilha* pi, struct aluno *al){
     *al = pi->dados[pi->qtd-1];
     return 1;
 };
+
+void imprime_pilha(Pilha* pi){
+    if(pi == NULL)
+        return;
+    int i;
+    for(i=pi->qtd-1; i >=0; i--){
+        printf("Matricula: %d\n",pi->dados[i].matricula);
+        printf("Nome: %s\n",pi->dados[i].nome);
+        printf("Notas: %f %f %f\n",pi->dados[i].n1,
+                                   pi->dados[i].n2,
+                                   pi->dados[i].n3);
+        printf("-------------------------------\n");
+    }
+}

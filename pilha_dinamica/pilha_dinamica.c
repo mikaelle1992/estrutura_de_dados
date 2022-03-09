@@ -22,3 +22,32 @@ Pilha* cria_pilha()
     return pi;
 };
 
+void libera_pilha(Pilha* pi){
+    if(pi !=NULL){
+        Elem* no;
+        while((pi*) !=NULL){
+            no = *pi;
+            *pi = (*pi)->prox;
+            free(no);
+        }
+        free(pi);
+    }
+};
+
+int tamanho_pilha(Pilha* pi){
+    if(pi == NULL)
+    {
+         return 0;
+    }
+    int cont = 0;
+    Elem* no = *pi;
+    while(no != NULL){
+        cont++;
+        no = no->prox;
+    }
+    return cont;
+};
+
+int Pilha_cheia(Pilha* pi){
+    return 0;
+};

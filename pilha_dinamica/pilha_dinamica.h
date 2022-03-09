@@ -14,18 +14,18 @@ typedef struct elemento* Pilha;
 
 Pilha* cria_pilha();
 
-void libera_pilha(Pilha* fi);
+void libera_pilha(Pilha* pi);
 
-int tamanho_pilha(Pilha* fi);
+int tamanho_pilha(Pilha* pi);
 
-int Pilha_cheia(Pilha* fi);
+int Pilha_cheia(Pilha* pi);
 
-int Pilha_vazia(Pilha* fi);
+int Pilha_vazia(Pilha* pi);
 
-int insere_pilha(Pilha* fi, struct aluno al);
+int insere_pilha(Pilha* pi, struct aluno al);
 
-int remove_pilha(Pilha* fi);
+int remove_pilha(Pilha* pi);
 
-int consulta_pilha(Pilha* fi, struct aluno *al);
+int consulta_pilha(Pilha* pi, struct aluno *al);
 
-void imprime_pilha(Pilha* fi);
+void imprime_pilha(Pilha* pi);

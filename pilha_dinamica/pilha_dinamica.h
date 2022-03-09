@@ -18,9 +18,9 @@ void libera_pilha(Pilha* pi);
 
 int tamanho_pilha(Pilha* pi);
 
-int Pilha_cheia(Pilha* pi);
+int pilha_cheia(Pilha* pi);
 
-int Pilha_vazia(Pilha* pi);
+int pilha_vazia(Pilha* pi);
 
 int insere_pilha(Pilha* pi, struct aluno al);
 

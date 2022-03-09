@@ -1,0 +1,4 @@
+"Pilha Dinâmica"
+Tipo de Pilha onde cada elemento aponta para o seu sucessor na pilha.
+Usa um ponteiro especial (ponteiro para ponteiro) para o primeiro elemento da 
+pilha e uma indicação de final de pilha. 

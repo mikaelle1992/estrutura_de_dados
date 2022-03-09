@@ -1,0 +1,5 @@
+"Pilha Estática":
+Tipo de Pilha onde o sucessor de um elemento ocupa a posição física seguinte do mesmo
+(uso de "array")
+Em uma pilha a inserção é sempre no seu início.
+Também existe o caso a inserção é feita em uma pilha que está vazia.

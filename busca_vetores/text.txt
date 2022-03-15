@@ -1,0 +1,6 @@
+"Busca"
+Recupeção de dados armazenados emuma repositório ou base de dados.
+Tipo de busca depende do dados. 
+- Dados estão estruturado (vetor, lista, árvore). Existe também busca em dados não estruturado.
+-Dados ordenadas (ou não ordenadas).
+- Valores duplicados.

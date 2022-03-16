@@ -1,0 +1,5 @@
+"insertionSort"
+
+Similar a ordenação de cartas de baralho com as mãos
+Pega-se uma carta de cada vez e a coloca em seu devido lugar, sempre deixando as cartas
+da mão em ordem.

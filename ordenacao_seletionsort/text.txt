@@ -1,0 +1,4 @@
+"SelectionSort" 
+A cada passo, procura o menor valor do array e o coloca na primeira posição do array.
+Descarta-se a primeira posição do array e repete-se o processo para a segunda posição.
+Isso é feito para todas as posições do array.

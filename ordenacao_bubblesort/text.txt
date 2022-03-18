@@ -1,0 +1,3 @@
+"BubbleSort" ou "Ordenação por Bolha"
+Compara pares de elementos adjacente e os troca de lugar se estiverem na ordem errada.
+Esse processo se repete até que mais nenhuma troca seja necessária(elementos já ordenados)

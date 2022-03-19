@@ -1,0 +1,5 @@
+"MergeSort" ou Ordenação por mistura      
+Iddeia básica: dividir e conquistar.
+Divide, recursivamente, o conjunto de dados até que cada subconjunto possua 1 elemento.
+COmbina 2 subconjuntos de forma a obter 1 conjunto maior e ordenado.
+Esse processo se repete até que exista apenas 1 conjunto.

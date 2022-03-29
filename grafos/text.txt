@@ -1,0 +1,25 @@
+"Grafos" 
+É um modelo matemático que representa relações entre objetos.
+Utilizados na definição e/ou resolução  de problemas de diversas areas.
+
+"Em computação" 
+é uma forma de solucionar problemas computáveis.
+Buscam o desenvolvimento de algoritmos mais eficientes.
+
+"Exemplos" 
+Qual a melhor rota da minha casa até um restaurante?
+Duas pessoas tem algum amigo de comum?
+
+tipos de grafos:
+
+Grafo trivial
+É uma grafo com um único vértice e sem arestas.
+
+Grafo simples
+É um gato não direcionado, sem laços e sem arestas paralelas.
+
+Grafo completo
+É um grafo simples onde cada vértice se conecta a todos os outros vértices
+
+Grafo regular 
+É um grafo onde todos os vértices possuem o mesmo grau

@@ -33,3 +33,34 @@ void libera_ArvBin(ArvBin* raiz){
     libera_NO(*raiz);
     free(raiz);
 }
+
+int estaVazia_ArvBin(ArvBin *raiz){
+    if(raiz == NULL)
+        return 1;
+    if(*raiz == NULL)
+        return 1;
+    return 0;
+}
+
+int totalNO_ArvBin(ArvBin *raiz){
+    if (raiz == NULL)
+        return 0;
+    if (*raiz == NULL)
+        return 0;
+    int alt_esq = totalNO_ArvBin(&((*raiz)->esq));
+    int alt_dir = totalNO_ArvBin(&((*raiz)->dir));
+    return(alt_esq + alt_dir + 1);
+}
+
+int altura_ArvBin(ArvBin *raiz){
+    if (raiz == NULL)
+        return 0;
+    if (*raiz == NULL)
+        return 0;
+    int alt_esq = altura_ArvBin(&((*raiz)->esq));
+    int alt_dir = altura_ArvBin(&((*raiz)->dir));
+    if (alt_esq > alt_dir)
+        return (alt_esq + 1);
+    else
+        return(alt_dir + 1);
+}

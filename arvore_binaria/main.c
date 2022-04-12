@@ -20,4 +20,6 @@ int main()
 
     int k = totalNO_ArvBin(raiz);
         printf("\n total de nó da árvore: %d", k);
+
+        
 }

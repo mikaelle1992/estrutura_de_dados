@@ -14,18 +14,24 @@ int main()
         printf("esta vazia\n");
     }
     else{
-        printf("\n não esta vazia");
+        printf("\nnão esta vazia");
     }
 
     int i;
     for(i=0; i < N; i++)
         insere_ArvBin(raiz,dados[i]);
     int y = altura_ArvBin(raiz);
-        printf("\n altura da árvore é: %d", y);
+    printf("\naltura da árvore é: %d", y);
 
     int k = totalNO_ArvBin(raiz);
-        printf("\n total de nó da árvore: %d\n", k);
+    printf("\ntotal de nó da árvore: %d\n", k);
 
+    if (consulta_ArvBin(raiz, 75)){
+        printf("O valor foi encontrado\n");
+    }
+    else{
+        printf("O valor  não foi encontrado\n");
+    }
 
 
     libera_ArvBin(raiz);

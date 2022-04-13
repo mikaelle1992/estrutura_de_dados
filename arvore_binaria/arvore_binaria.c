@@ -182,3 +182,20 @@ int remove_ArvBin(ArvBin *raiz, int valor){
     }
     return 0;
 }
+
+
+int consulta_ArvBin(ArvBin *raiz, int valor){
+    if(raiz == NULL)
+        return 0;
+    struct NO* atual = *raiz;
+    while(atual != NULL){
+        if(valor == atual->info){
+            return 1;
+        }
+        if(valor > atual->info)
+            atual = atual->dir;
+        else
+            atual = atual->esq;
+    }
+    return 0;
+}

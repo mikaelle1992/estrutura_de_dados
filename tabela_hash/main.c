@@ -11,6 +11,11 @@ int main(){
                         {3451,"Bianca",9.7,6.7,8.4},
                         {5293,"Ana",5.7,6.1,7.4}};
 
+    struct aluno all, b[4] = {{12369,"Rico",9.2,2.8,9.5},
+                    {9894,"Junior",9.9,6.1,7.1},
+                    {4461,"Florinda",5.7,6.7,8.4},
+                    {6423,"Chaves",6.7,3.9,9.4}};
+
     int i;
     for(i=0; i < 4; i++){
         insereHash_SemColisao(tabela,a[i]);
@@ -23,8 +28,16 @@ int main(){
     buscaHash_SemColisao(tabela, 3451, &al);
     printf("%s, %d\n",al.nome,al.matricula);
 
+    int j;
+    for(j=0; j < 4; j++){
+        insereHash_EnderAberto(tabela,b[j]);
+    }
     buscaHash_SemColisao(tabela, 5293, &al);
     printf("%s, %d\n",al.nome,al.matricula);
+
+    int x = buscaHash_EnderAberto(tabela, 4461, &all);
+    printf("%d", x);
+
 
     liberaHash(tabela);
 

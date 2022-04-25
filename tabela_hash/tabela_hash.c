@@ -93,3 +93,63 @@ int buscaHash_SemColisao(Hash* ha, int mat, struct aluno* al){
     *al = *(ha->itens[pos]);
     return 1;
 }
+
+int sondagemLinear(int pos, int i, int TABLE_SIZE){
+    return ((pos + i) & 0x7FFFFFFF) & TABLE_SIZE;
+}
+
+
+int sondagemQuadratica(int pos, int i, int TABLE_SIZE){
+    pos = pos + 2 * i + 5*i*i;
+    return ((pos + i) & 0x7FFFFFFF) & TABLE_SIZE;
+}
+
+int sondaDuploHash(int h1, int i, int chave, int TABLE_SIZE){
+    int h2 = chaveDivisao(chave, TABLE_SIZE -1) +1;
+    return ((h1 + i* h2) & 0x7FFFFFFF) & TABLE_SIZE;
+
+}
+
+int insereHash_EnderAberto(Hash* ha, struct aluno al){
+    if(ha == NULL || ha->qtd == ha->TABLE_SIZE)
+        return 0;
+
+    int chave = al.matricula;
+
+    int i, pos, newPos;
+    pos = chaveDivisao(chave,ha->TABLE_SIZE);
+    for(i=0; i < ha->TABLE_SIZE; i++){
+        newPos = sondagemLinear(pos,i,ha->TABLE_SIZE);
+       
+        if(ha->itens[newPos] == NULL){
+            struct aluno* novo;
+            novo = (struct aluno*) malloc(sizeof(struct aluno));
+            if(novo == NULL)
+                return 0;
+            *novo = al;
+            ha->itens[newPos] = novo;
+            ha->qtd++;
+            return 1;
+        }
+    }
+    return 0;
+}
+
+int buscaHash_EnderAberto(Hash* ha, int mat, struct aluno* al){
+    if(ha == NULL)
+        return 0;
+
+    int i, pos, newPos;
+    pos = chaveDivisao(mat,ha->TABLE_SIZE);
+    for(i=0; i < ha->TABLE_SIZE; i++){
+        newPos = sondagemLinear(pos,i,ha->TABLE_SIZE);
+        if(ha->itens[newPos] == NULL)
+            return 0;
+
+        if(ha->itens[newPos]->matricula == mat){
+            *al = *(ha->itens[newPos]);
+            return 1;
+        }
+    }
+    return 0;
+}

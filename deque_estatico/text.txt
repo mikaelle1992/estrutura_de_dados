@@ -1,0 +1,8 @@
+"Deque" 
+São um tipo especial de 'fila'
+Permite a inserção e remoção em ambas as extremidades da estrutura.
+Double Ended QUEue: fila com duas saídas.
+É um estrutura que generaliza a idéia de 'fila' e 'pilha'>
+Pode ser usada como ambas.
+'Pilha': inserção e remoção na mesma extremidade.
+'Fila': inserção e remoção em extremidades opostas.

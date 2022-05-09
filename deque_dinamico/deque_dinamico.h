@@ -25,3 +25,7 @@ int Deque_cheia(Deque* dq);
 int consultaInicio_Deque(Deque *dq, struct aluno *al);
 
 int consultaFinal_Deque(Deque *dq, struct aluno *al);
+
+int insereInicio_Deque(Deque* dq, struct aluno al);
+
+int insereFinal_Deque(Deque* dq, struct aluno al);

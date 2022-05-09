@@ -15,7 +15,25 @@ int main(){
    
     Deque* dq = cria_Deque();
 
+    int x1 =  Deque_cheia(dq);
+    printf("Deque cheia %d\n", x1);
+
+    int y = insereInicio_Deque(dq, b);
+    printf("inserio no inicio deque %d\n", y);
+
+    int y2 = insereFinal_Deque(dq, c);
+    printf("inserio no final deque %d\n", y2);
+
+    int x2 = Deque_vazio(dq);
+    printf("Deque vazio %d\n", x2);
+
+
+    int x = tamanho_Deque(dq);
+    printf("tamanho do Deque %d\n", x);
+
     libera_Deque(dq);
+
+
     system("pause");
 
     return 0;

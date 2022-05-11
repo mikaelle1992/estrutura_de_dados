@@ -24,12 +24,20 @@ int main(){
 
     Lista* li = criaLista(sizeof(struct aluno));
 
+    int i;
+    for(i=0; i < 4; i++)
+        insereLista(li,a[i].matricula,&a[i]);
 
     struct aluno al;
     buscaLista(li,2,&al);
     printf("Busca:\n");
     printf("------------------\n");
 
+    printf("Remove Chave 2:\n");
+    printf("-------------------------------\n");
+    removeLista(li,2);
+    imprimeLista(li,imprime_aluno);
+    printf("\n\n");
 
     liberaLista(li);
 

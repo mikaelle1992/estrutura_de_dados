@@ -2,8 +2,8 @@
 
 1. Clone o repositório.
 2. Acesse a pasta estutura_de_dados
-3. Acesse a pasta desejada(ex:busca _vetores)
-3. Execute no terminal gcc main.c
+3. Acesse a pasta desejada(ex:arvore_binaria)
+3. Execute no terminal gcc main.c para compilar o arquivo
 4. Execute no terminal ./"main"
 
 

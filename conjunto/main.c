@@ -29,7 +29,7 @@ int main(){
         printf("Iterator %d: %d\n",i,x);
     }
 
-    //Teste Uniao
+   
     printf("======================\n");
     printf("Teste Uniao\n");
     printf("======================\n");
